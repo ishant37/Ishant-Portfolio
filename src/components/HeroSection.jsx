@@ -81,9 +81,7 @@ const HeroSection = () => {
               className="bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href =
-                  "";
-                link.download = "Ishaant_Resume.pdf";
+                link.href ="https://drive.google.com/file/d/10J8wXG84uFmgUrv2YKLjurQlUV9W8zYX/view?usp=sharing";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -93,20 +91,20 @@ const HeroSection = () => {
               <Download className="mr-2" />
               Download CV
             </Button>
-            <Button
-          variant="outline"
-          size="lg"
-          id='contact'
-          className="rounded-full border-purple-200 mx-2 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/30 font-medium py-3"
-          onClick={() => {
-            const contactSection = document.getElementById("contact");
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-        >
-          Contact Me
-        </Button>
+           <Button
+  variant="outline"
+  size="lg"
+  className="rounded-full border-purple-200 mx-2 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/30 font-medium py-3"
+  onClick={() => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }}
+>
+  Contact Me
+</Button>
+
       </div>
     </div>
 
