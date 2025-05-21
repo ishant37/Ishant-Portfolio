@@ -139,7 +139,7 @@ const projects = [
 ];
 
 
-const ROTATION_RANGE = 34.5;
+const ROTATION_RANGE = 30;
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 const ProjectCard = ({ project }) => {

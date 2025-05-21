@@ -9,7 +9,7 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import ThemeToggle from '../components/ThemeToggle';
 import Interest from '../components/Interest';
-import WaterDropGrid from '../components/WaterDropGrid';
+// import WaterDropGrid from '../components/WaterDropGrid';
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -19,7 +19,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
-        <WaterDropGrid/>
+        {/* <WaterDropGrid/> */}
         <ProjectsSection />
         <Interest/>
         <ContactSection />
