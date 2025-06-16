@@ -271,7 +271,9 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Name"
-                      className={errors.name ? "border-red-500" : " px-2"}
+                        className={`w-full px-2 py-2 border rounded-md bg-white text-gray-900 dark:bg-gray-800 dark:text-white dark:border-gray-600 ${
+    errors.email ? "border-red-500" : ""
+  }`}
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-red-500 px-8">
@@ -294,7 +296,9 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Email"
-                      className={errors.email ? "border-red-500" : "px-2"}
+                        className={`w-full px-2 py-2 border rounded-md bg-white text-gray-900 dark:bg-gray-800 dark:text-white dark:border-gray-600 ${
+    errors.email ? "border-red-500" : ""
+  }`}
                     />
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-500">
@@ -317,7 +321,9 @@ const ContactSection = () => {
                       onChange={handleChange}
                       placeholder="Your message here..."
                       rows={5}
-                      className={errors.message ? "border-red-500" : "px-2 py-2"}
+                        className={`w-full px-2 py-2 border rounded-md bg-white text-gray-900 dark:bg-gray-800 dark:text-white dark:border-gray-600 ${
+    errors.email ? "border-red-500" : ""
+  }`}
                     />
                     {errors.message && (
                       <p className="mt-1 text-sm text-red-500">
