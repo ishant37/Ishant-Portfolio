@@ -22,12 +22,13 @@ const Navbar = () => {
   return (
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/70 backdrop-blur-md shadow" : "bg-transparent"
+        scrolled ? "bg-background/70 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <motion.a
+        
+        {/* Custom Logo or Initials */}
+     <motion.a
           href="#hero"
           className="text-2xl font-bold text-primary"
           initial={{ opacity: 0, y: -10 }}
@@ -37,21 +38,24 @@ const Navbar = () => {
           Portfolio
         </motion.a>
 
-        {/* Desktop Menu */}
+
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="relative font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
-              <span className="absolute left-0 bottom-0 h-[2px] w-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform bg-primary"></span>
-            </a>
+            <div key={link.name} className="group relative">
+              <a
+                href={link.href}
+                className="font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.name}
+              </a>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-primary"></span>
+            </div>
           ))}
         </nav>
 
-        {/* Hamburger Button (Mobile Only) */}
+        {/* Hamburger Button */}
         <button
           className="md:hidden flex flex-col space-y-1 z-50"
           onClick={() => setIsOpen(!isOpen)}
@@ -62,7 +66,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -77,12 +81,19 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl font-semibold text-foreground"
+                className="text-2xl font-semibold text-foreground hover:text-primary transition"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </a>
             ))}
+
+            <button
+              onClick={() => setIsOpen(false)}
+              className="mt-8 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+            >
+              Close Menu
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

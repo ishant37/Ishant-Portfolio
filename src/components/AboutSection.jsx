@@ -75,8 +75,7 @@ const AboutSection = () => {
             <div className="lg:w-1/2">
               <h3 className="text-2xl font-semibold mb-4">My Background</h3>
               <p className="mb-4 text-foreground/80">
-                I'm a passionate full-stack developer with over 5 years of experience
-                building web applications. I enjoy solving complex problems and turning
+                I'm a passionate full-stack developer with  web applications. I enjoy solving complex problems and turning
                 ideas into reality through elegant interfaces.
               </p>
               <p className="mb-4 text-foreground/80">
