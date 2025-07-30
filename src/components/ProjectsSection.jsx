@@ -1,5 +1,5 @@
-import AnimatedSection from './AnimatedSection';
-import Button from './Button';
+import AnimatedSection from "./AnimatedSection";
+import Button from "./Button";
 import {
   motion,
   useMotionTemplate,
@@ -8,7 +8,8 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import React, { useRef, useState } from "react";
-import { FiMousePointer } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
+// import { FiMousePointer } from "react-icons/fi";
 const projects = [
   {
     id: "project1",
@@ -119,25 +120,16 @@ const projects = [
   },
   {
     id: "project6",
-    title: "Student Management System",
+    title: "HeartSync",
     description:
-      "A Python application for managing student records, grades, and attendance.",
-    image: "https://www.slideshare.net/slideshow/stdent-infromation/66678121", // Replaced link for reliability
-    longDescription:
-      "A Python-based student-grade-management system that allows schools to manage student records, grades, and attendance. The application features a user-friendly interface for teachers and administrators to add, update, and view student information.",
-    tags: ["Python", "Tkinter"],
+      "HeartSync is a web application that allows users to chat with an AI trained on their own WhatsApp conversations with a loved one.",
+    image: "https://i.postimg.cc/dQBjH3gL/chat.png", // Replaced link for reliability
+    tags: ["Express", "MongoDB", "JS (Vanilla)", "NodeJS"],
     links: {
-      github: "https://github.com/ishant37/student-grade-management",
-      demo: "", // optional: add a live link or leave empty
+      github: "https://github.com/ishant37/student-grade-management", // optional: add a live link or leave empty
     },
-    features: [
-      "Student record management",
-      "Grade tracking and reporting",
-      "Attendance tracking",
-    ],
   },
 ];
-
 
 const ROTATION_RANGE = 30;
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
@@ -148,7 +140,7 @@ const ProjectCard = ({ project }) => {
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const z = useMotionValue(0); 
+  const z = useMotionValue(0);
 
   const xSpring = useSpring(x);
   const ySpring = useSpring(y);
@@ -180,7 +172,7 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -196,44 +188,72 @@ const ProjectCard = ({ project }) => {
       onMouseEnter={() => setIsHovered(true)}
     >
       <div className="relative overflow-hidden h-56">
-        <img 
-          src={project.image} 
-          alt={project.title} 
+        <img
+          src={project.image}
+          alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
           style={{
-            transform: isHovered ? 'scale(1.05)' : 'scale(1)'
+            transform: isHovered ? "scale(1.05)" : "scale(1)",
           }}
         />
-        <div 
+        <div
           className="absolute inset-0 bg-black transition-opacity duration-500 ease-in-out"
           style={{
-            opacity: isHovered ? 0.5 : 0
+            opacity: isHovered ? 0.5 : 0,
           }}
         ></div>
       </div>
-      
+
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
         <p className="text-foreground/70 mb-4">{project.description}</p>
-        
+
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
+            <span key={index} className="tag">
+              {tag}
+            </span>
           ))}
         </div>
-        
+
         <div className="flex gap-4">
-          <Button href={project.links.demo} variant="primary" className="flex-1 text-sm">
+          <Button
+            href={project.links.demo}
+            variant="primary"
+            className="flex-1 text-sm"
+          >
             Live Demo
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
               <polyline points="15 3 21 3 21 9"></polyline>
               <line x1="10" y1="14" x2="21" y2="3"></line>
             </svg>
           </Button>
-          <Button href={project.links.github} variant="outline" className="flex-1 text-sm">
+          <Button
+            href={project.links.github}
+            variant="outline"
+            className="flex-1 text-sm"
+          >
             GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
           </Button>
@@ -243,17 +263,40 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-
 const ProjectsSection = () => {
   return (
     <AnimatedSection id="projects" className="bg-muted/50">
       <div className="container mx-auto">
         <h2 className="section-title">Featured Projects</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 box-shadow: var(--shadow-2xl)">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
+        </div>
+      </div>
+      <div className="bg-linear-to-r from-blue-900 to-black-900 text-white p-10 rounded-2xl shadow-lg text-center mt-10">
+        <h2 className="text-2xl font-bold mb-4">Want to see more?</h2>
+        <p className="text-sm md:text-base text-gray-300 mb-6">
+          These are just a few highlights from my portfolio. I'm constantly
+          working on new projects and exploring innovative technologies.
+        </p>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <a
+            href="https://github.com/ishant37?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded transition-all duration-300"
+          >
+            <FaGithub />
+            View All on GitHub
+          </a>
+          <a
+            href="mailto:singhishant37@gmail.com"
+            className="border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Let's Collaborate
+          </a>
         </div>
       </div>
     </AnimatedSection>
