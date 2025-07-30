@@ -10,10 +10,13 @@ import Footer from '../components/Footer';
 import ThemeToggle from '../components/ThemeToggle';
 import Interest from '../components/Interest';
 // import Cards from "../components/Cards"
+// App.jsx or App.js
+import '../App.css';
+
 // import WaterDropGrid from '../components/WaterDropGrid';
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="h-screen overflow-y-scroll blue-gradient-scrollbar">
       <Navbar />
       <ThemeToggle />
       <main>

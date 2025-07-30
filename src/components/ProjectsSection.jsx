@@ -107,7 +107,7 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB", "Express"],
     links: {
       github: "https://github.com/ishant37/job-junction",
-      demo: "https://job-junction-frontend.vercel.app/",
+      
     },
     features: [
       "Job listings and search",
