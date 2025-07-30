@@ -82,7 +82,7 @@ const HeroSection = () => {
               className="bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href ="https://drive.google.com/file/d/10J8wXG84uFmgUrv2YKLjurQlUV9W8zYX/view?usp=sharing";
+                link.href ="./Ishant_resume.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
