@@ -125,7 +125,7 @@ const projects = [
     image: "https://i.postimg.cc/dQBjH3gL/chat.png", // Replaced link for reliability
     tags: ["Express", "MongoDB", "JS (Vanilla)", "NodeJS"],
     links: {
-      github: "https://github.com/ishant37/student-grade-management", // optional: add a live link or leave empty
+      github: "https://github.com/ishant37/HeartSync", // optional: add a live link or leave empty
     },
   },
 ];
