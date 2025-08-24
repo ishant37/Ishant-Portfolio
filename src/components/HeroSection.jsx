@@ -4,6 +4,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import BlurText from "./Animations/BlurText"; // Import the BlurText component
 import Particles from "./Animations/Particles"; // Import the Particles component
 import RotatingText from "./Animations/RotatingText"; // Import the RotatingText component
+import GlareHover from "./Animations/GlareHover";
 // import "./HeroBackground.css";
 
 const HeroSection = () => {
@@ -111,11 +112,21 @@ const HeroSection = () => {
   {/* Right: Image with Glow */}
   <div className="relative mt-10 md:mt-0">
     <div className="w-74 h-70 rounded-full relative overflow-hidden shadow-xl shadow-purple-300 dark:shadow-purple-800 animate-glow-border">
+        <GlareHover
+    glareColor="#ffffff"
+    glareOpacity={0.3}
+    glareAngle={-30}
+    glareSize={300}
+    transitionDuration={800}
+    playOnce={false}
+  >
       <img
         src="https://i.postimg.cc/zGm9r5Cm/Whats-App-Image-2025-01-28-at-22-42-40-26a643c6.jpg" // Replace with your image path
         alt="Ishaant"
         className="w-full h-full object-cover rounded-full"
+        
       />
+      </GlareHover>
       <div className="absolute inset-0 rounded-full ring-4 ring-purple-400/40 animate-pulse-glow" />
     </div>
   </div>

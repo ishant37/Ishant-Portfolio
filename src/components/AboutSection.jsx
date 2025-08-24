@@ -3,6 +3,32 @@ import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import ClickSpark from './ClickSpark';
 
+import LogoLoop from './Animations/LogoLoop';
+import { FaCss3, FaGitAlt } from 'react-icons/fa';
+import { FaHtml5 } from 'react-icons/fa';
+
+
+import { SiReact, SiTypescript, SiTailwindcss,SiExpress } from 'react-icons/si';
+import { BiLogoMongodb } from 'react-icons/bi';
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <BiLogoMongodb />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <FaGitAlt />, title: "Github", href: "https://github.com/" },
+  { node: <FaHtml5 />, title: "Github", href: "https://github.com/" },
+  { node: <SiExpress />, title: "Github", href: "https://github.com/" },
+  { node: <FaCss3 />, title: "Github", href: "https://github.com/" }
+];
+
+// Alternative with image sources
+// const imageLogos = [
+//   { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+//   { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+//   { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+// ];
+
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
@@ -102,6 +128,26 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
+      <div style={{  width:'50rem',
+  height: '200px',
+  justifyContent:'center',
+  margin:'auto',
+  marginTop:'3rem',
+  position: 'ablsolute',
+  overflow: 'hidden'}}>
+      <LogoLoop
+        logos={techLogos}
+        speed={120}
+        direction="left"
+        logoHeight={48}
+        gap={40}
+        pauseOnHover
+        scaleOnHover
+        // fadeOut
+        // fadeOutColor="#ffffff"
+        ariaLabel="Technology partners"
+      />
+    </div>
       </AnimatedSection>
     </ClickSpark>
   );
