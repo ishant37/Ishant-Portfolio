@@ -120,10 +120,10 @@ const AboutSection = () => {
             {/* Reveal Links Section */}
             <div className="lg:w-1/2 flex items-center justify-center">
               <div className="grid gap-4">
-                <FlipLink href="https://github.com/ishant37">Github</FlipLink>
-                
-                <FlipLink href="https://www.linkedin.com/in/ishaant-singh-288b70291/">LINKEDIN</FlipLink>
-                <FlipLink href="https://www.instagram.com/__ishant05/">Instagram</FlipLink>
+                <FlipLink className="cursor-target" href="https://github.com/ishant37">Github</FlipLink>
+
+                <FlipLink className="cursor-target" href="https://www.linkedin.com/in/ishaant-singh-288b70291/">LINKEDIN</FlipLink>
+                <FlipLink className="cursor-target" href="https://www.instagram.com/__ishant05/">Instagram</FlipLink>
               </div>
             </div>
           </div>

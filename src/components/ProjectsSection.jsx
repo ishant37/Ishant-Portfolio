@@ -220,7 +220,7 @@ const ProjectCard = ({ project }) => {
     <Button
       href={project.links.demo}
       variant="primary"
-      className="flex-1 text-sm"
+      className="flex-1 text-sm cursor-target"
     >
       Live Demo
       <svg
@@ -244,7 +244,7 @@ const ProjectCard = ({ project }) => {
     <Button
       href={project.links.github}
       variant="outline"
-      className="flex-1 text-sm"
+      className="flex-1 text-sm cursor-target"
     >
       GitHub
       <svg
@@ -291,14 +291,14 @@ const ProjectsSection = () => {
             href="https://github.com/ishant37?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded transition-all duration-300"
+            className="flex cursor-target items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded transition-all duration-300"
           >
             <FaGithub />
             View All on GitHub
           </a>
           <a
             href="mailto:singhishant37@gmail.com"
-            className="border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-all duration-300"
+            className="border cursor-target border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-all duration-300"
           >
             Let's Collaborate
           </a>

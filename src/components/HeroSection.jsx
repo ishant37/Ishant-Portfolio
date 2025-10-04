@@ -5,6 +5,7 @@ import BlurText from "./Animations/BlurText"; // Import the BlurText component
 import Particles from "./Animations/Particles"; // Import the Particles component
 import RotatingText from "./Animations/RotatingText"; // Import the RotatingText component
 import GlareHover from "./Animations/GlareHover";
+import TargetCursor from "./Animations/TargetCursor";
 // import "./HeroBackground.css";
 
 const HeroSection = () => {
@@ -77,10 +78,14 @@ const HeroSection = () => {
     </p>
 
     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+      {/* <TargetCursor
+        
+      /> */}
+      
      <Button
               size="lg"
               variant="primary"
-              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium"
+              className="cursor-target bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium"
               onClick={() => {
                 const link = document.createElement("a");
                 link.href ="./Ishant_resume.pdf";
@@ -96,7 +101,7 @@ const HeroSection = () => {
       <Button
         variant="outline"
         size="lg"
-        className="rounded-full border-purple-200 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/30 font-medium py-3"
+        className=" cursor-target rounded-full border-purple-200 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/30 font-medium py-3"
         onClick={() => {
           window.scrollTo({
             top: document.body.scrollHeight,

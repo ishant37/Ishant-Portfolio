@@ -334,7 +334,7 @@ const ContactSection = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                    className="cursor-target w-full bg-purple-600 hover:bg-purple-700 text-white"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
