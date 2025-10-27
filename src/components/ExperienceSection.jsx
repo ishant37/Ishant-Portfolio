@@ -18,7 +18,7 @@ const experiences = [
   },
   {
     role: 'Web Developer',
-    company: 'Bharat internet Pvt. Ltd.',
+    company: 'Bharat Intern Pvt. Ltd.',
     period: 'Aug 2024 - Sep 2024',
     description: 'Contributed to the development of client websites and internal tools using modern JavaScript frameworks and CSS preprocessors.',
     tasks: [

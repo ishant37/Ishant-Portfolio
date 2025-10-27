@@ -35,16 +35,17 @@ const projects = [
   },
   {
     id: "project2",
-    title: "Task Management App",
+    title: "Ajay-Pargati",
     description:
-      "TextForm is basically used to copy, Uppercase and lowercase any text which you can paste at another place.",
+      "This project is a web portal for the PM-AJAY (Pradhan Mantri Anusuchit Jaati Abhyuday Yojana) Grant-in-Aid (GIA) scheme.",
     image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1000",
+      "https://i.postimg.cc/PqCffRjY/image.png",
     longDescription:
       "A productivity tool inspired by Trello and Asana, built with React, Redux, and Firebase. Users can create boards, add tasks with details, set due dates, assign team members, and track progress through customizable workflows.",
-    tags: ["React", "Redux", "Tailwind", "CSS"],
+    tags: ["React", "Redux", "Tailwind", "CSS","Leaflet","GIS","Geojson"],
     links: {
-      github: "https://github.com/ishant37/Textform",
+      github: "https://github.com/ishant37/AJAY-Pragati",
+      demo: "https://ajay-pragati.vercel.app/"
     },
     features: [
       "Drag-and-drop interface for task management",
@@ -79,16 +80,16 @@ const projects = [
   },
   {
     id: "project4",
-    title: "Weather Dashboard",
+    title: "Nyay-Darpan",
     description:
-      "Real-time weather forecasting with interactive maps and alerts.",
-    image: "https://i.postimg.cc/Y9H5fM8h/image.png",
+      "Nyay-Darpan is an AI-powered decision-assist tool that summarizes consumer case files and retrieves similar judgments to aid in consumer law dispute resolution in India.",
+    image: "https://i.postimg.cc/NjMpdWTd/image.png",
     longDescription:
-      "A weather application that provides real-time forecasts, interactive maps, and weather alerts. Built with React and integrating multiple weather APIs, it delivers accurate weather data with a clean, intuitive interface.",
+      "",
     tags: ["React", "Weather API", "Chart.js", "Mapbox"],
     links: {
-      github: "https://github.com/ishant37/weather-app",
-      demo: "https://weather-app-git-main-ishant37s-projects.vercel.app/",
+      github: "https://github.com/ishant37/NyayDarpan",
+      demo: "https://nyay-darpan.vercel.app/",
     },
     features: [
       "Real-time weather updates",
