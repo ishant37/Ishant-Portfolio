@@ -88,7 +88,7 @@ const HeroSection = () => {
               className="cursor-target bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href ="./Ishant_resume.pdf";
+                link.href ="./singhishant37.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
