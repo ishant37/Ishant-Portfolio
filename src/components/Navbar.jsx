@@ -30,7 +30,7 @@ const Navbar = () => {
         {/* Custom Logo or Initials */}
      <motion.a
           href="#hero"
-          className="text-2xl font-bold text-primary"
+          className="text-lg sm:text-xl md:text-2xl font-bold text-primary"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -81,7 +81,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-2xl font-semibold text-foreground hover:text-primary transition"
+                className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground hover:text-primary transition"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}

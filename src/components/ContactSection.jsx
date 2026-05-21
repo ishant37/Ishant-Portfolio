@@ -130,7 +130,7 @@ const ContactSection = () => {
       <section
         id="contact"  
         ref={sectionRef}
-        className="py-20 px-4 bg-gray-50 dark:bg-gray-900/30"
+        className="py-16 sm:py-20 md:py-24 px-4 bg-gray-50 dark:bg-gray-900/30"
       >
         <div className="container mx-auto max-w-6xl">
           
@@ -147,30 +147,30 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             <div
               className={`${
                 isSectionVisible ? "animate-fade-in" : "opacity-0"
               }`}
               style={{ animationDelay: "200ms" }}
             >
-              <div className="glass-card rounded-xl p-6 md:p-8 h-full relative z-10">
-                <h3 className="text-2xl font-semibold mb-6">
+              <div className="glass-card rounded-xl p-4 sm:p-6 md:p-8 h-full relative z-10">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
                   Contact Information
                 </h3>
 
-                <div className="space-y-6 mb-8">
+                <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                   <div className="flex items-center">
-                    <div className="p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mr-4">
-                      <Mail size={20} />
+                    <div className="p-2.5 sm:p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mr-3 sm:mr-4 flex-shrink-0">
+                      <Mail size={18} className="sm:w-5 sm:h-5" />
                     </div>
-                    <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                         Email
                       </p>
                       <a
                         href="mailto:singhishant37@gmail.com"
-                        className="text-purple-700 dark:text-purple-400 hover:underline"
+                        className="text-purple-700 dark:text-purple-400 hover:underline text-xs sm:text-sm break-all"
                       >
                         singhishant37@gmail.com
                       </a>
@@ -178,28 +178,28 @@ const ContactSection = () => {
                   </div>
 
                   <div className="flex items-center">
-                    <div className="p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mr-4">
-                      <MapPin size={20} />
+                    <div className="p-2.5 sm:p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mr-3 sm:mr-4 flex-shrink-0">
+                      <MapPin size={18} className="sm:w-5 sm:h-5" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                         Location
                       </p>
-                      <p>Jaipur, Rajasthan</p>
+                      <p className="text-xs sm:text-sm">Jaipur, Rajasthan</p>
                     </div>
                   </div>
 
                   <div className="flex items-center">
-                    <div className="p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mr-4">
-                      <Phone size={20} />
+                    <div className="p-2.5 sm:p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mr-3 sm:mr-4 flex-shrink-0">
+                      <Phone size={18} className="sm:w-5 sm:h-5" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                         Phone
                       </p>
                       <a
                         href="tel:+916367690519"
-                        className="text-purple-700 dark:text-purple-400 hover:underline"
+                        className="text-purple-700 dark:text-purple-400 hover:underline text-xs sm:text-sm"
                       >
                         +91 6367690519
                       </a>
@@ -208,7 +208,7 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-medium mb-4">Follow Me</h4>
+                  <h4 className="text-base sm:text-lg font-medium mb-3 sm:mb-4">Follow Me</h4>
                   <div className="flex space-x-4 animate-bounce">
                     <a
                       href="https://github.com/ishant37"

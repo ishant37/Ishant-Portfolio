@@ -47,18 +47,18 @@ export default function InterestsCarousel() {
   return (
     <section
       id="interests"
-      className="max-w-7xl mx-auto px-4 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center justify-center gap-12"
+      className="max-w-7xl mx-auto px-4 py-12 sm:py-16 md:py-24 flex flex-col-reverse md:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12"
     >
       {/* Left: Text Content */}
       <div className="w-full md:w-1/2 text-center md:text-left">
-        <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white relative inline-block">
-          <span className="border-l-4 border-blue-700 pl-4">My Interests</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gray-800 dark:text-white relative inline-block">
+          <span className="border-l-4 border-blue-700 pl-3 sm:pl-4">My Interests</span>
         </h2>
-        <div aria-live="polite" aria-atomic="true" role="region" className="min-h-[140px]">
-          <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+        <div aria-live="polite" aria-atomic="true" role="region" className="min-h-[120px] sm:min-h-[140px]">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-3 sm:mb-4">
             {interests[currentIndex].title}
           </h3>
-          <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
             {interests[currentIndex].description}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function InterestsCarousel() {
 
       {/* Right: Carousel */}
       <div
-        className="w-full md:w-1/2 h-[400px] sm:h-[450px] md:h-[500px] relative"
+        className="w-full md:w-1/2 h-[280px] sm:h-[350px] md:h-[450px] lg:h-[500px] relative"
         onMouseEnter={stopAutoplay}
         onMouseLeave={startAutoplay}
       >

@@ -5,133 +5,88 @@ import {
   useMotionTemplate,
   useMotionValue,
   useSpring,
-  AnimatePresence,
 } from "framer-motion";
 import React, { useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-// import { FiMousePointer } from "react-icons/fi";
+import { ExternalLink, Code2, Star } from "lucide-react";
+
 const projects = [
   {
     id: "project1",
-    title: "E-Commerce Platform- Apni Dukan",
+    title: "Job Junction",
     description:
-      "A full-featured online store with cart, payment processing, and admin dashboard.",
+      "An AI-powered employment platform that connects job seekers with employers through smart recommendations, resume management, and skill-based matching.",
+    image: "https://i.postimg.cc/cLGHYRGk/Screenshot-2025-05-10-143521.png",
+    tags: ["React", "Node.js", "MongoDB", "Express", "AI"],
+    links: {
+      github: "https://github.com/ishant37/job-junction",
+    },
+    featured: true,
+  },
+  {
+    id: "project2",
+    title: "HeartSync",
+    description:
+      "A personal AI chat application that allows users to interact with an AI trained on their own WhatsApp conversations.",
+    image: "https://i.postimg.cc/dQBjH3gL/chat.png",
+    tags: ["Node.js", "Express", "MongoDB", "JavaScript"],
+    links: {
+      github: "https://github.com/ishant37/HeartSync",
+    },
+    featured: true,
+  },
+  {
+    id: "project3",
+    title: "Apni Dukan",
+    description:
+      "A full-stack e-commerce platform with product catalog, cart management, authentication, payment integration, and admin dashboard.",
     image: "https://i.postimg.cc/wjPHNCSm/image.png",
-    longDescription:
-      "A comprehensive e-commerce platform built with React, Node.js, and MongoDB. Features include product catalog, cart management, secure payment processing, order tracking, and an admin dashboard for inventory management.",
-    tags: ["React", "Node.js", "MongoDB", "React-Redux"],
+    tags: ["React", "Node.js", "MongoDB", "Redux", "Stripe"],
     links: {
       github: "https://github.com/ishant37/My-Shop",
       demo: "https://my-shop-chi-mocha.vercel.app/",
     },
-    features: [
-      "User authentication and profiles",
-      "Product search and filtering",
-      "Shopping cart and wishlist",
-      "Payment processing with Stripe",
-      "Order history and tracking",
-      "Admin dashboard for inventory management",
-    ],
+    featured: true,
   },
   {
-    id: "project2",
-    title: "Ajay-Pargati",
+    id: "project4",
+    title: "AJAY Pragati",
     description:
-      "This project is a web portal for the PM-AJAY (Pradhan Mantri Anusuchit Jaati Abhyuday Yojana) Grant-in-Aid (GIA) scheme.",
-    image:
-      "https://i.postimg.cc/PqCffRjY/image.png",
-    longDescription:
-      "A productivity tool inspired by Trello and Asana, built with React, Redux, and Firebase. Users can create boards, add tasks with details, set due dates, assign team members, and track progress through customizable workflows.",
-    tags: ["React", "Redux", "Tailwind", "CSS","Leaflet","GIS","Geojson"],
+      "A web portal for PM-AJAY Grant-in-Aid scheme with GIS-based visualization, scheme tracking, and interactive map features.",
+    image: "https://i.postimg.cc/PqCffRjY/image.png",
+    tags: ["React", "Tailwind", "Leaflet", "GIS", "GeoJSON"],
     links: {
       github: "https://github.com/ishant37/AJAY-Pragati",
-      demo: "https://ajay-pragati.vercel.app/"
+      demo: "https://ajay-pragati.vercel.app/",
     },
-    features: [
-      "Drag-and-drop interface for task management",
-      "Custom board and column creation",
-      "Task attachments and comments",
-      "Team member assignment",
-      "Due dates and reminders",
-      "Activity tracking and notifications",
-    ],
   },
   {
-    id: "project3",
-    title: "My personal GYM",
+    id: "project5",
+    title: "Nyay Darpan",
     description:
-      "A mobile-first fitness app for tracking workouts, nutrition, and progress.",
+      "An AI-powered legal decision-assist tool that summarizes consumer case files and retrieves similar judgments for dispute resolution.",
+    image: "https://i.postimg.cc/NjMpdWTd/image.png",
+    tags: ["React", "AI", "LegalTech", "Search", "NLP"],
+    links: {
+      github: "https://github.com/ishant37/NyayDarpan",
+      demo: "https://nyay-darpan.vercel.app/",
+    },
+  },
+  {
+    id: "project6",
+    title: "Personal Gym Website",
+    description:
+      "A responsive fitness website with modern UI sections, workout content, and clean design focused on user engagement.",
     image: "https://i.postimg.cc/FKt8NNMD/image.png",
-    longDescription:
-      "A comprehensive fitness application built with React Native and a Node.js backend. The app enables users to track workouts, monitor nutrition intake, set fitness goals, visualize progress with charts, and connect with fitness communities.",
     tags: ["React", "Tailwind", "CSS"],
     links: {
       github: "https://github.com/ishant37/Gym-site",
       demo: "https://gym-site-beta.vercel.app/",
     },
-    features: [
-      "Workout logging and routines",
-      "Nutrition tracking and meal planning",
-      "Progress visualization with charts",
-      "Goal setting and achievements",
-      "Social features and challenges",
-      "Integration with fitness wearables",
-    ],
-  },
-  {
-    id: "project4",
-    title: "Nyay-Darpan",
-    description:
-      "Nyay-Darpan is an AI-powered decision-assist tool that summarizes consumer case files and retrieves similar judgments to aid in consumer law dispute resolution in India.",
-    image: "https://i.postimg.cc/NjMpdWTd/image.png",
-    longDescription:
-      "",
-    tags: ["React", "Weather API", "Chart.js", "Mapbox"],
-    links: {
-      github: "https://github.com/ishant37/NyayDarpan",
-      demo: "https://nyay-darpan.vercel.app/",
-    },
-    features: [
-      "Real-time weather updates",
-      "5-day forecasting",
-      "Interactive weather maps",
-      "Location-based services",
-    ],
-  },
-  {
-    id: "project5",
-    title: "Job-Junction",
-    description: "A job portal for job seekers and employers to connect.",
-    image: "https://i.postimg.cc/cLGHYRGk/Screenshot-2025-05-10-143521.png",
-    longDescription:
-      "A comprehensive job portal that connects job seekers with potential employers. Built with React and Node.js, it features job listings, resume uploads, application tracking, and employer profiles.",
-    tags: ["React", "Node.js", "MongoDB", "Express"],
-    links: {
-      github: "https://github.com/ishant37/job-junction",
-      
-    },
-    features: [
-      "Job listings and search",
-      "Resume upload and management",
-      "Application tracking system",
-      "Employer profiles and reviews",
-      "Email notifications for job matches",
-    ],
-  },
-  {
-    id: "project6",
-    title: "HeartSync",
-    description:
-      "HeartSync is a web application that allows users to chat with an AI trained on their own WhatsApp conversations with a loved one.",
-    image: "https://i.postimg.cc/dQBjH3gL/chat.png", // Replaced link for reliability
-    tags: ["Express", "MongoDB", "JS (Vanilla)", "NodeJS"],
-    links: {
-      github: "https://github.com/ishant37/HeartSync", // optional: add a live link or leave empty
-    },
   },
 ];
 
-const ROTATION_RANGE = 30;
+const ROTATION_RANGE = 24;
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 const ProjectCard = ({ project }) => {
@@ -140,11 +95,9 @@ const ProjectCard = ({ project }) => {
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const z = useMotionValue(0);
 
   const xSpring = useSpring(x);
   const ySpring = useSpring(y);
-  const zSpring = useSpring(z);
 
   const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
@@ -152,14 +105,12 @@ const ProjectCard = ({ project }) => {
     if (!ref.current) return;
 
     const rect = ref.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
 
     const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
     const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
 
-    const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
-    const rY = mouseX / width - HALF_ROTATION_RANGE;
+    const rX = (mouseY / rect.height - HALF_ROTATION_RANGE) * -1;
+    const rY = mouseX / rect.width - HALF_ROTATION_RANGE;
 
     x.set(rX);
     y.set(rY);
@@ -175,17 +126,17 @@ const ProjectCard = ({ project }) => {
     <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="card h-full relative overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
+      className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl hover:shadow-purple-500/20 transition-all duration-500"
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      onMouseEnter={() => setIsHovered(true)}
     >
       <div className="relative overflow-hidden h-56">
         <img
@@ -193,77 +144,64 @@ const ProjectCard = ({ project }) => {
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
           style={{
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
+            transform: isHovered ? "scale(1.08)" : "scale(1)",
           }}
         />
-        <div
-          className="absolute inset-0 bg-black transition-opacity duration-500 ease-in-out"
-          style={{
-            opacity: isHovered ? 0.5 : 0,
-          }}
-        ></div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+        {project.featured && (
+          <div className="absolute top-4 left-4 z-20 flex items-center gap-1 bg-purple-600 text-white text-xs px-3 py-1 rounded-full shadow-lg">
+            <Star size={13} />
+            Featured
+          </div>
+        )}
       </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-foreground/70 mb-4">{project.description}</p>
+      <div className="p-5 sm:p-6">
+        <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-500 transition-colors">
+          {project.title}
+        </h3>
+
+        <p className="text-foreground/70 mb-4 text-sm leading-relaxed">
+          {project.description}
+        </p>
 
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tags.map((tag, index) => (
-            <span key={index} className="tag">
+            <span
+              key={index}
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-muted text-xs text-foreground/80 border border-border"
+            >
+              <Code2 size={12} />
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex gap-4">
-  {project.links.demo && (
-    <Button
-      href={project.links.demo}
-      variant="primary"
-      className="flex-1 text-sm cursor-target"
-    >
-      Live Demo
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-4 h-4"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-      </svg>
-    </Button>
-  )}
+        <div className="flex gap-3">
+          {project.links.demo && (
+            <Button
+              href={project.links.demo}
+              variant="primary"
+              className="flex-1 text-sm cursor-target hover:scale-105 transition-all duration-300"
+            >
+              Live Demo
+              <ExternalLink className="w-4 h-4" />
+            </Button>
+          )}
 
-  {project.links.github && (
-    <Button
-      href={project.links.github}
-      variant="outline"
-      className="flex-1 text-sm cursor-target"
-    >
-      GitHub
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-4 h-4"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-      </svg>
-    </Button>
-  )}
-</div>
-
+          {project.links.github && (
+            <Button
+              href={project.links.github}
+              variant="outline"
+              className="flex-1 text-sm cursor-target hover:scale-105 transition-all duration-300"
+            >
+              GitHub
+              <FaGithub className="w-4 h-4" />
+            </Button>
+          )}
+        </div>
       </div>
     </motion.div>
   );
@@ -272,37 +210,50 @@ const ProjectCard = ({ project }) => {
 const ProjectsSection = () => {
   return (
     <AnimatedSection id="projects" className="bg-muted/50">
-      <div className="container mx-auto">
-        <h2 className="section-title">Featured Projects</h2>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="section-title">Featured Projects</h2>
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mt-3">
+            A collection of full-stack, AI-based, and frontend projects focused
+            on real-world problem solving and clean user experience.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 box-shadow: var(--shadow-2xl)">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-      </div>
-      <div className="bg-linear-to-r from-blue-900 to-black-900 text-white p-10 rounded-2xl shadow-lg text-center mt-10">
-        <h2 className="text-2xl font-bold mb-4">Want to see more?</h2>
-        <p className="text-sm md:text-base text-gray-300 mb-6">
-          These are just a few highlights from my portfolio. I'm constantly
-          working on new projects and exploring innovative technologies.
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <a
-            href="https://github.com/ishant37?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex cursor-target items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded transition-all duration-300"
-          >
-            <FaGithub />
-            View All on GitHub
-          </a>
-          <a
-            href="mailto:singhishant37@gmail.com"
-            className="border cursor-target border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-all duration-300"
-          >
-            Let's Collaborate
-          </a>
+
+        <div className="bg-gradient-to-r from-purple-900 via-blue-900 to-black text-white p-6 sm:p-8 md:p-10 rounded-3xl shadow-2xl text-center mt-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
+            Want to see more?
+          </h2>
+
+          <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-6 max-w-2xl mx-auto">
+            These are just a few highlights from my portfolio. I'm constantly
+            building new projects, improving my skills, and exploring modern web
+            technologies.
+          </p>
+
+          <div className="flex justify-center gap-3 sm:gap-4 flex-wrap">
+            <a
+              href="https://github.com/ishant37?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex cursor-target items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 text-xs sm:text-sm rounded-full hover:scale-105 transition-all duration-300"
+            >
+              <FaGithub />
+              View All on GitHub
+            </a>
+
+            <a
+              href="mailto:singhishant37@gmail.com"
+              className="border cursor-target border-white text-white py-2 px-4 text-xs sm:text-sm rounded-full hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
+            >
+              Let's Collaborate
+            </a>
+          </div>
         </div>
       </div>
     </AnimatedSection>

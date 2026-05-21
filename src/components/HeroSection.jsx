@@ -36,31 +36,31 @@ const HeroSection = () => {
 
       {/* --- Background Blur Effects --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-[10%] w-72 h-72 bg-purple-300/30 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse-light"></div>
+        <div className="absolute top-10 sm:top-16 md:top-20 right-[5%] sm:right-[10%] md:right-[10%] w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 bg-purple-300/30 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse-light"></div>
         <div
-          className="absolute bottom-10 left-[15%] w-64 h-64 bg-blue-300/20 dark:bg-blue-500/10 rounded-full filter blur-3xl animate-pulse-light"
+          className="absolute bottom-5 sm:bottom-10 md:bottom-10 left-[5%] sm:left-[15%] md:left-[15%] w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-blue-300/20 dark:bg-blue-500/10 rounded-full filter blur-3xl animate-pulse-light"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
 
       {/* --- Main Content --- */}
-      <div className="container mx-auto my-24 px-4 relative z-10 flex flex-col md:flex-row items-center justify-between">
+      <div className="container mx-auto my-16 md:my-24 px-4 relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-12">
   {/* Left: Text Content */}
   <div
-    className={`space-y-6 transform transition-all duration-700 ${
+    className={`space-y-4 sm:space-y-6 transform transition-all duration-700 ${
       isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-    } max-w-xl`}
+    } max-w-xl w-full md:w-auto`}
   >
     <div className="w-full flex justify-center md:justify-start">
-      <h1 className="text-4xl md:text-6xl font-bold gradient-heading mb-3 text-center md:text-left">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-heading mb-2 sm:mb-3 text-center md:text-left">
         <BlurText text="Hello, I'm Ishaant" className="text-purple-700 dark:text-purple-400" />
       </h1>
     </div>
 
-    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
+    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
       <RotatingText
         texts={['Fullstack-Developer', 'Designer', 'Creator']}
-        mainClassName="px-2 sm:px-2 md:px-3 dark:text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+        mainClassName="px-1.5 sm:px-2 md:px-3 dark:text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
         staggerFrom={"last"}
         initial={{ y: "100%" }}
         animate={{ y: 0 }}
@@ -72,12 +72,12 @@ const HeroSection = () => {
       />
     </p>
 
-    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto md:mx-0 mb-8">
+    <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto md:mx-0 mb-6 sm:mb-8">
       I build beautiful, responsive web applications with modern technologies.
       Passionate about creating intuitive user experiences and clean, efficient code.
     </p>
 
-    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
       {/* <TargetCursor
         
       /> */}
@@ -115,26 +115,35 @@ const HeroSection = () => {
   </div>
 
   {/* Right: Image with Glow */}
-  <div className="relative mt-10 md:mt-0">
-    <div className="w-74 h-70 rounded-full relative overflow-hidden shadow-xl shadow-purple-300 dark:shadow-purple-800 animate-glow-border">
-        <GlareHover
-    glareColor="#ffffff"
-    glareOpacity={0.3}
-    glareAngle={-30}
-    glareSize={300}
-    transitionDuration={800}
-    playOnce={false}
-  >
+  <div
+  className={`relative flex justify-center items-center transform transition-all duration-700 ${
+    isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+  }`}
+>
+  {/* Glow Background */}
+  <div className="absolute w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/30 dark:bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+
+  {/* Gradient Border */}
+  <div className="relative p-[4px] rounded-full bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-500">
+    <div className="rounded-full bg-white dark:bg-black p-2">
       <img
-        src="https://i.postimg.cc/zGm9r5Cm/Whats-App-Image-2025-01-28-at-22-42-40-26a643c6.jpg" // Replace with your image path
-        alt="Ishaant"
-        className="w-full h-full object-cover rounded-full"
-        
+        src="https://i.postimg.cc/HkSCXBqm/Ishaant-removebg-preview-(1).png"
+        alt="Ishaant Singh"
+       className="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 object-cover rounded-full shadow-xl grayscale hover:grayscale-0 transition-all duration-500"
       />
-      </GlareHover>
-      <div className="absolute inset-0 rounded-full ring-4 ring-purple-400/40 animate-pulse-glow" />
     </div>
   </div>
+
+  {/* Floating Badge */}
+  <a
+  href="https://www.linkedin.com/in/ishaant-singh-288b70291/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="absolute bottom-2 right-2 md:bottom-8 md:right-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white px-4 py-2 rounded-full shadow-lg border border-purple-200 dark:border-purple-800 text-sm font-medium hover:scale-105 transition-all duration-300"
+>
+  🚀 Open to Opportunities
+</a>
+</div>
 </div>
 
 
