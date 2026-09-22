@@ -17,7 +17,7 @@ import TargetCursor from '../components/Animations/TargetCursor';
 // import WaterDropGrid from '../components/WaterDropGrid';
 const Index = () => {
   return (
-    <div className="h-screen overflow-y-scroll blue-gradient-scrollbar">
+    <div className="min-h-screen overflow-x-hidden blue-gradient-scrollbar">
       <TargetCursor 
         spinDuration={2}
         hideDefaultCursor={true}

@@ -73,19 +73,33 @@
   * {
     @apply border-border;
   }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
   html {
     scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground transition-all duration-300 ease-in-out;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
   }
 
   .section {
-    @apply py-12 sm:py-16 md:py-24 px-4;
+    @apply py-12 sm:py-16 md:py-24 px-4 sm:px-6;
   }
   
   .section-title {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center relative;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center relative leading-tight;
   }
   
   .section-title::after {
